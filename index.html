@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -220,6 +220,41 @@
             border-radius: 10px;
             border: 5px solid rgb(236, 88, 255);
         }
+
+        .reasoning {
+            position: relative;
+            top: -10px;
+            color: rgb(255, 174, 0);
+            background-color: rgb(57, 38, 0);
+            border: 5px solid rgb(57, 38, 0);
+            box-shadow: 5px 15px 20px rgb(122, 77, 2);
+        }
+
+        .box4 {
+            left: 1150px;
+            background-color: rgb(255, 213, 94);
+            border-color: rgb(255, 213, 94);
+            box-shadow: 10px 10px 50px rgb(255, 174, 0);
+            border-radius: 10px;
+            border: 5px solid rgb(255, 213, 94);
+        }
+
+        .cs {
+            position: relative;
+            top: -10px;
+            color: rgb(255, 220, 220);
+            background-color: rgb(207, 36, 36);
+            border: 5px solid rgb(207, 36, 36);
+            box-shadow: 5px 15px 20px rgb(255, 99, 99);
+        }
+
+        .box5 {
+            background-color: rgb(255, 120, 120);
+            border-color: rgb(255, 120, 120);
+            box-shadow: 10px 10px 50px rgb(255, 120, 120);
+            border-radius: 10px;
+            border: 5px solid rgb(255, 120, 120);
+        }
     </style>
 </head>
 
@@ -250,6 +285,22 @@
                 <button class="chemistry" onclick="showSyllabus('Chemistry')">Click here to start</button>
             </div>
         </div>
+        <div class="box">
+            <div class="box4">
+                <img src="logical-reasoning-determines-whether-truth-conclusion-can-be-determined-rule-based-solely-premises-text-295278910.webp"
+                    alt="Logical Reasoning" />
+                <h2>Logical Reasoning</h2>
+                <button class="reasoning" onclick="showSyllabus('LogicalReasoning')">Click here to start</button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box5">
+                <img src="science-concept-computer-science-on-digital-background-F08JHA.jpg" alt="Computer Science" />
+                <h2>Computer Science</h2>
+                <button class="cs" onclick="showSyllabus('CS')">Click here to start</button>
+            </div>
+        </div>
+
     </div>
 
     <script>
@@ -301,6 +352,30 @@
         🔹 Important Formulas and Reaction Pathways included!`;
                 pdf = "JEE_Main_Chemistry_Syllabus_Basic_to_Advanced1.pdf";
             }
+            else if (subject === "LogicalReasoning") {
+                message = `Boost your Logical Reasoning skills for JEE Mains B.Arch/B.Planning!<br><br>
+    🔹 Basic Reasoning Concepts (Till the End of May)<br>
+    🔹 Series and Sequences (Till Mid-June)<br>
+    🔹 Coding-Decoding & Direction Sense (Till July)<br>
+    🔹 Blood Relations & Order-Ranking (August)<br>
+    🔹 Syllogisms, Statements & Assumptions (September)<br>
+    🔹 Data Sufficiency & Puzzle Solving (October)<br>
+    actice Mock Tests & Revise Tricks (November)<br><br>
+    Master analytical thinking to score better in aptitude sections!`;
+                 pdf = "Logical_Reasoning_Preparation_Plan.pdf";
+            }
+            else if (subject === "CS") {
+                message = `Crack Computer Science for JEE & other competitive exams!<br><br>
+    🔹 Programming Basics, Flowcharts & Pseudocode (Till May)<br>
+    🔹 Python / C++ Fundamentals (Till June)<br>
+    🔹 Data Structures: Arrays, Stacks, Queues (July)<br>
+    🔹 OOP Concepts & File Handling (August)<br>
+    🔹 DBMS Basics & SQL (September)<br>
+    🔹 Computer Networks & OS Concepts (October)<br>
+    🔹 Full revision & test practice (November)`;
+                pdf = "Computer_Science1.pdf";
+            }
+
 
             document.body.innerHTML = `
         <div class="header">${subject} Syllabus</div>
@@ -309,7 +384,7 @@
           <br><strong>📄 Full PDF Syllabus:</strong> <a href="${pdf}" target="_blank">Click here to open</a>
           <div class="back" onclick="location.reload()">⬅️ Go Back</div>
         </div>
-      `;
+       `
         }
     </script>
 </body>
