@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JEE PREP</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images.JPG');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            min-height: 100vh;
+            animation: fadeIn 1.5s ease-in-out;
+            overflow-x: hidden;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .header {
+            width: 100%;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            padding: 20px;
+            text-align: center;
+            font-size: 5vw;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px #000000;
+            box-shadow: 0 5px 15px black;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px 10px;
+        }
+
+        .box {
+            width: 300px;
+            background-color: rgba(0, 0, 0, 0.95);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            color: #000;
+            text-align: center;
+            transition: transform 0.3s ease;
+
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        .box img {
+            width: 100%;
+            height: 180px;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .box h2 {
+            margin: 15px 0 10px;
+            font-size: 22px;
+        }
+
+        .box button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+
+        .box button:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .content {
+            padding: 40px 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            max-width: 900px;
+            margin: 100px auto 40px;
+            color: black;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .back {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #203a43;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .back:hover {
+            background-color: #1e3c4e;
+        }
+
+        @media screen and (max-width: 768px) {
+            .header {
+                font-size: 7vw;
+                padding: 15px;
+            }
+
+            .box {
+                width: 90%;
+            }
+
+            .box h2 {
+                font-size: 20px;
+            }
+
+            .box button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            .content {
+                margin-top: 80px;
+                font-size: 16px;
+            }
+        }
+
+        .physics {
+            /* background-color: rgb(0, 255, 251);
+            /* From .box */
+            /* color: black;
+            border: 3px solid rgb(0, 255, 251);
+            box-shadow: 0 5px 20px rgb(115, 229, 255); */
+            position: relative;
+            top: -10px;
+            color: rgb(25, 0, 185);
+            background-color: rgb(0, 140, 255);
+            border: 5px solid rgb(0, 140, 255);
+            box-shadow: 5px 15px 20px rgb(16, 81, 192);
+        }
+
+        .maths {
+            /* background-color: rgb(0, 255, 94);
+            /* From .box2 */
+            /* color: black;
+            border: 3px solid rgb(0, 255, 94);
+            box-shadow: 0 5px 20px rgb(103, 255, 93); */
+            position: relative;
+            top: -10px;
+            color: rgb(76, 234, 2);
+            background-color: rgb(40, 139, 31);
+            border: 5px solid rgb(12, 117, 28);
+            box-shadow: 5px 15px 20px rgb(45, 150, 26);
+        }
+
+        .chemistry {
+            /* background-color: rgb(236, 88, 255);
+            /* From .box3 */
+            /* color: black;
+            border: 3px solid rgb(236, 88, 255);
+            box-shadow: 0 5px 20px rgb(236, 88, 255); */
+            position: relative;
+            top: -10px;
+            color: rgb(199, 116, 255);
+            background-color: rgb(74, 39, 97);
+            border: 5px solid rgb(74, 39, 97);
+            box-shadow: 5px 15px 20px rgb(139, 45, 183);
+        }
+
+        .box1 {
+            left: 100px;
+            background-color: rgb(0, 255, 251);
+            border-color: rgb(0, 255, 251);
+            box-shadow: 10px 10px 50px rgb(115, 229, 255);
+            border-radius: 10px;
+            border: 5px solid rgb(0, 255, 251);
+        }
+
+        .box2 {
+            left: 450px;
+            background-color: rgb(0, 255, 94);
+            border-color: rgb(0, 255, 94);
+            box-shadow: 10px 10px 50px rgb(103, 255, 93);
+            border-radius: 10px;
+            border: 5px solid rgb(0, 255, 94);
+        }
+
+        .box3 {
+            left: 800px;
+            background-color: rgb(236, 88, 255);
+            border-color: rgb(236, 88, 255);
+            box-shadow: 10px 10px 50px rgb(236, 88, 255);
+            border-radius: 10px;
+            border: 5px solid rgb(236, 88, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        🔥 JEE MAINS PREPARATION PORTAL 🔥
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <div class="box1">
+                <img src="physics-round-blue-science-and-education-vector-21096677.jpg" alt="Physics" />
+                <h2>Physics Syllabus</h2>
+                <button class="physics" onclick="showSyllabus('Physics')">Click here to start</button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box2">
+                <img src="MicrosoftTeams-image-58.webp" alt="Maths" />
+                <h2>Maths Syllabus</h2>
+                <button class="maths" onclick="showSyllabus('Maths')">Click here to start</button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box3">
+                <img src="chemistry-colorful-round-vector-12906189.jpg" alt="Chemistry" />
+                <h2>Chemistry Syllabus</h2>
+                <button class="chemistry" onclick="showSyllabus('Chemistry')">Click here to start</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSyllabus(subject) {
+            let message = "";
+            let pdf = "";
+
+            if (subject === "Physics") {
+                message = `Get ready to master Physics for JEE Mains!<br><br>
+     
+        🔹 Basic Foundation (Till the End of May) <br>
+        🔹 Mechanics and Thermal Physics (Til the End of June)<br>
+        🔹 Waves and  Oscillations (Till the End of July)<br>
+        🔹 Electrostatric and Current Electricity (Till the End of  August)<br>
+        🔹 Electricity and Magnetism (Till the End of September)<br>
+        🔹 Optics and (Till the End of October)<br>
+        🔹 Modern Physics (Till the End of November)<br>
+        🔹 Rotational Motion: Torque, Angular Momentum, Moment of Inertia<br>
+        🔹 Thermodynamics: Laws of Thermodynamics, Heat Transfer<br>
+        🔹 Electromagnetism: Coulomb's Law, Gauss' Law, Ohm's Law, Kirchhoff's Rules<br>
+        🔹 Waves & Optics: Wave Equation, Snell's Law, Lens Formula<br>
+        🔹 Modern Physics: Photoelectric Effect, Nuclear Reactions`;
+
+                pdf = "JEE_Main_Physics_Syllabus_Basic_to_Advanced.pdf";
+            } else if (subject === "Maths") {
+                message = `Sharpen your Maths skills for JEE Mains!<br><br>
+        🔹 Basic foundation (Till the End of May)<br>
+        🔹 Algebra (Till the End of July) <br>
+        🔹 Coordinate Geometry (Till the End of August) <br>
+        🔹 Calculus (Till the End of September)<br>
+        🔹 Vector and 3d Geometry (Till the End of October)<br>
+        🔹 Inverse and Special Functions & Statistics & Data Interpretation (Till the End of November)<br>
+        🔹 Algebra: Quadratic Equations, Complex Numbers, Matrices & Determinants<br>
+        🔹 Calculus: Limits, Derivatives, Integrals, Differential Equations<br>
+        🔹 Coordinate Geometry: Straight Lines, Circles, Conic Sections<br>
+        🔹 Trigonometry: Identities, Equations, Inverse Trigonometric Functions<br>
+        🔹 Probability & Statistics: Mean, Median, Mode, Permutations & Combinations`;
+                pdf = "JEE_Maths_Syllabus_Categorized.pdf";
+            } else if (subject === "Chemistry") {
+                message = `Conquer Chemistry for JEE Mains!<br><br>
+        🔹 Basic foundation (Till the End of May)<br
+        🔹 Inorganic Cemistry (Till the End of July) <br>
+        🔹 Organic Chemistry (Till the End of September ) <br>
+        🔹 Physical Chemistry (Till the End of November) <br>
+        🔹 Physical Chemistry: Mole Concept, Thermodynamics, Chemical Kinetics<br>
+        🔹 Organic Chemistry: Nomenclature, Hydrocarbons, Reaction Mechanisms<br>
+        🔹 Inorganic Chemistry: Periodic Table, Chemical Bonding, Coordination Compounds<br>
+        🔹 Surface Chemistry, Electrochemistry<br>
+        🔹 Important Formulas and Reaction Pathways included!`;
+                pdf = "JEE_Main_Chemistry_Syllabus_Basic_to_Advanced1.pdf";
+            }
+
+            document.body.innerHTML = `
+        <div class="header">${subject} Syllabus</div>
+        <div class="content">
+          <p>${message}</p>
+          <br><strong>📄 Full PDF Syllabus:</strong> <a href="${pdf}" target="_blank">Click here to open</a>
+          <div class="back" onclick="location.reload()">⬅️ Go Back</div>
+        </div>
+      `;
+        }
+    </script>
+</body>
+
+</html>
